@@ -26,17 +26,22 @@ describe("Task2-Test", function () {
       }
 
 
-    it("setScore", async function () {
-        const {ScoreV1, ScoreV2} = await loadFixture(deployTokenFixture);
+    it("SetScore", async function () {
+        const {ScoreV1, ScoreV2, ScoreStorage} = await loadFixture(deployTokenFixture);
+        //SetScoreV1
         console.log("SetScoreV1: 5");
         await ScoreV1.incrementScore(5);
-        console.log("get ScoreV2:", await ScoreV2.getScore());
-        expect(await ScoreV1.getScore()).to.equal(5);
+        //Check ScoreStorage
+        console.log("Get ScoreStorage:", await ScoreStorage.getScore());
+        expect(await ScoreStorage.getScore()).to.equal(5);
 
+        //SetScoreV2
         console.log("SetScoreV2: 5");
         await ScoreV2.incrementScore();
-        expect(await ScoreV2.getScore()).to.equal(6);
-        console.log("Get ScoreV2: ",await ScoreV2.getScore());
+
+        //Check ScoreStorage
+        console.log("Get ScoreStorage: ",await ScoreStorage.getScore());
+        expect(await ScoreStorage.getScore()).to.equal(6);
         
     });
   })

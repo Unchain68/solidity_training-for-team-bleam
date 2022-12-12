@@ -2,7 +2,7 @@
 
 pragma solidity >= 0.7.0 < 0.9.0;
 
-contract ScoreStorage {
+contract Task3_ScoreStorage {
 
   mapping(bytes32=>uint256) uints;
   

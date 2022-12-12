@@ -14,8 +14,5 @@ contract Task2_ScoreV1 {
     ss.setScore(_score);
   }
 
-  function getScore() public view returns(uint256) {
-    return ss.getScore();
-  }
   
 }
