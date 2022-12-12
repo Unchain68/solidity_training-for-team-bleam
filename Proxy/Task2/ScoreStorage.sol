@@ -3,13 +3,13 @@
 pragma solidity  >= 0.7.0 < 0.9.0;
 
 contract ScoreStorage {
-  uint public score;
+  uint256 public score;
   
-  function setScore(uint _score) public {
+  function setScore(uint256 _score) public {
     score = _score;
   }
   
-  function getScore(uint _score) public view returns(uint) {
+  function getScore() public view returns(uint256) {
     return score;
   }
 }

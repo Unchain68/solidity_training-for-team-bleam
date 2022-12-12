@@ -14,7 +14,7 @@ contract ScoreV2 {
     ss = ScoreStorage(scoreStorage);
   }
   
-  function incrementScore(uint _score) public {
+  function incrementScore() public {
     ss.setUints(SCORE, ss.getUints(SCORE) + 1);
   }
 }

@@ -10,7 +10,8 @@ contract ScoreV1 {
     ss = ScoreStorage(scoreStorage);
   }
   
-  function setScore(uint _score) {
+  function setScore(uint256 _score) public {
     ss.setScore(_score);
   }
+  
 }

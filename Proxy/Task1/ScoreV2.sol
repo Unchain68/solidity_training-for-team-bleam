@@ -3,9 +3,9 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 contract Score2 {
-  uint public score; 
+  uint256 public score; 
   
-  function incrementScore(uint _score) {
+  function implSetScore(uint256 _score) public{
     score = _score + 1;
   }
 }
