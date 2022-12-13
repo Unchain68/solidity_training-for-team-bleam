@@ -11,6 +11,10 @@ contract ScoreV1 is ProxyStorage, ScoreStorage {
         score = _score;
     }
     
+    function getScore() {
+        return score;
+    }
+    
     function getEncodedSignature(string memory _func, uint256 num) 
         external 
         pure 
