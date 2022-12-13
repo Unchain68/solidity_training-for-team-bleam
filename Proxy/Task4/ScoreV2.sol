@@ -11,7 +11,7 @@ contract ScoreV2 is ProxyStorage, ScoreStorage {
         score = _score;
     }
     
-    function getScore() public returns(uint256) {
+    function getScore() public view returns(uint256) {
         return score;
     }
     
