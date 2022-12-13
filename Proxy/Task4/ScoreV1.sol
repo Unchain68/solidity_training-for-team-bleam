@@ -7,11 +7,11 @@ pragma solidity >= 0.7.0 < 0.9.0;
 
 contract ScoreV1 is ProxyStorage, ScoreStorage {
 
-    function setScore(uint256 _score) {
+    function setScore(uint256 _score) public {
         score = _score;
     }
     
-    function getScore() {
+    function getScore() public view returns(uint256) {
         return score;
     }
     
