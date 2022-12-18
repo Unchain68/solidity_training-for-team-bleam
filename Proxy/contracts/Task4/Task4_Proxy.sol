@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: GPL-3.0
 
-import "./ProxyStorage.sol";
+import "./Task4_ProxyStorage.sol";
 
 pragma solidity >= 0.7.0 < 0.9.0;
 
-contract Proxy {
+contract Task4_Proxy is Task4_ProxyStorage {
   
     uint256 public score;
   
@@ -17,12 +17,13 @@ contract Proxy {
     }
     
     fallback () external {
+        //solium-disable-next-line security/no-inline-assembly
         assembly {
             let ptr := mload(0x40)
             calldatacopy(ptr, 0, calldatasize())
-            let result := delegatecall(gas(), sload(implementation.slot), ptr, calldatatsize(), 0, 0)
+            let result := delegatecall(gas(), sload(implementation.slot), ptr, calldatasize(), 0, 0)
             let size := returndatasize()
-            returndatasize(ptr, 0, size())
+            returndatacopy(ptr, 0, size)
             
             switch result
             case 0 { revert(ptr, size) }

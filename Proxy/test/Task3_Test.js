@@ -1,5 +1,4 @@
 const { expect } = require("chai");
-// const ethers = require('ethers');
 const { loadFixture } = require("@nomicfoundation/hardhat-network-helpers");
 
 describe("Task3-Test", function () {

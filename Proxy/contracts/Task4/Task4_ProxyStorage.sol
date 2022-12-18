@@ -2,7 +2,7 @@
 
 pragma solidity >= 0.7.0 < 0.9.0;
 
-contract ProxyStorage {
+contract Task4_ProxyStorage {
   
   address public implementation;
   
