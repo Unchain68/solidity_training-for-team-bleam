@@ -15,6 +15,10 @@ contract Task4_Proxy is Task4_ProxyStorage {
     function setImplementation(address _imple) public {
         implementation = _imple;
     }
+
+    function getScore() public view returns(uint256){
+        return score;
+    }
     
     fallback () external {
         //solium-disable-next-line security/no-inline-assembly

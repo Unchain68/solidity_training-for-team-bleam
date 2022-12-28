@@ -11,10 +11,6 @@ contract Task4_ScoreV2 is Task4_ProxyStorage, Task4_ScoreStorage {
         score = _score+1;
     }
     
-    function getScore() public view returns(uint256) {
-        return score;
-    }
-    
     function getEncodedSignature(string memory _func, uint256 num) 
         external 
         pure 
